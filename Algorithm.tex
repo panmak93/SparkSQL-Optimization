@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+\begin{document}
+\begin{algorithm}
+\caption{Join Size}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{MyProcedure}{}
+\State $\vert \textit{A}\vert \gets \text{Cardinality of }\textit{Relation A}$
+\State $\vert \textit{B}\vert \gets \text{Cardinality of }\textit{Relation B}$
+\State $ \textit{X } \gets \text{Set of common attributes of} \textit{ A } \text{and}  \textit{ B } \{x_1,...,x_n\} $
+\State $ \textit{Num} \gets \vert \textit{A}\vert  \times \vert \textit{B}\vert $
+\State $ \textit{Denom} \gets \text{1} $
+\If{$X = \emptyset$}
+\State \Return $Num$
+\Else
+\For{$x_i \in X$}
+\State $\vert A_x \vert \gets \text{Number of entries of } x_i \text{ in }\textit{Relation A}$
+\State $\vert B_x \vert \gets \text{Number of entries of } x_i \text{ in }\textit{Relation B}$
+\State $ \textit{Denom} \gets \textit{Denom} \times \vert A_x \vert  \times \vert B_x \vert  $
+\State \Return $Num/ Denom$
+
+\EndFor
+\EndIf
+
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+\end{document} 
